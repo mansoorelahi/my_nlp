@@ -1,12 +1,7 @@
 GEM
-  remote: https://rubygems.org/
   specs:
-    bind-it (0.2.7-java)
-    open-nlp (0.1.5)
-      bind-it (~> 0.2.5)
 
 PLATFORMS
-  java
+  ruby
 
 DEPENDENCIES
-  open-nlp
