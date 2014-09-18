@@ -21,23 +21,13 @@ class MyApp < Sinatra::Base
     haml :index , :locals => { :data => DataEntry.all }
   end
 
-  get '/data' do
-    haml :data_entry, :locals => { :data => DataEntry.all }
-  end
 
   get '/new' do
-    haml :new, :locals => { :data => DataEntry.all }
+    haml :new
   end
 
   post '/create' do
     @entry = DataEntry.create(:entry => params[:entry])
     redirect  "/"
-  end
-
-
-  template :data_created do
-    "%div\n" +
-        "  Entry created\n" +
-        "%a(href='/data') Enter more"
   end
 end
