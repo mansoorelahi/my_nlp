@@ -6,18 +6,14 @@ module BaseNlp
   def read_doc
     OpenNLP.load
     text = File.read('sample.txt').gsub!("\n", "")
-
     tokenizer   = OpenNLP::TokenizerME.new
     segmenter   = OpenNLP::SentenceDetectorME.new
     ner_models  = ['person', 'time', 'money','location']
-
     ner_finders = ner_models.map do |model|
       OpenNLP::NameFinderME.new("en-ner-#{model}.bin")
     end
-
     sentences = segmenter.sent_detect(text)
     named_entities = []
-
     sentences.each do |sentence|
       tokens = tokenizer.tokenize(sentence)
       ner_models.each_with_index do |model,i|

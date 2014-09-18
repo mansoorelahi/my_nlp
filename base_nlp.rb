@@ -1,5 +1,7 @@
 require "lib/get_location"
 require "lib/read_passage"
+require "lib/extract_names"
+
 require 'open-nlp'
 module BaseNlp
 
@@ -15,6 +17,10 @@ module BaseNlp
        get_location=GetLocation.extract_location(@processed_data).compact.first.uniq
      end
 
+     def get_name
+       names=ExtractNames.names(@processed_data).compact.first.uniq
+     end
+
    end
 
 
@@ -23,4 +29,4 @@ module BaseNlp
 end
 
 loc= BaseNlp::DataExtracter.new
-puts loc.get_loc
+puts loc.get_name
