@@ -1,0 +1,10 @@
+%h1 Welcome to the Video Store
+%h1
+  = @title
+
+%form{ :action => "/nlp/create", :method => "post", :enctype => "multipart/form-data" }
+  %p
+    %label Data:
+    %input{ :type => "text", :name => "nlp[title]" }
+  %p
+    %input{ :type => "submit" }

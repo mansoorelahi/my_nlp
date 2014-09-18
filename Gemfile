@@ -1,2 +1,6 @@
 source 'https://rubygems.org'
 gem 'open-nlp'
+gem 'sinatra'
+gem 'haml'
+gem 'shotgun'
+gem 'jdbc-sqlite3'
