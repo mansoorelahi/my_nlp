@@ -3,6 +3,7 @@
     %tr
       %th #
       %th Entry
+      %th Action
     %tbody
       - data.each_with_index do |entry, index|
         %tr
@@ -10,4 +11,6 @@
             = index + 1
           %td
             = entry.entry
+          %td
+            %a(href="/extract_data?id=#{entry.id}" class="btn btn-info" ) Extract Data
 %a(href='/new' class="btn btn-warning") Enter New Data
