@@ -1,4 +1,13 @@
-%ol
-    - data.each do |entry|
-        %li= entry.entry
-%a(href='/new') Enter more Data
+%table.table
+  %thead
+    %tr
+      %th #
+      %th Entry
+    %tbody
+      - data.each_with_index do |entry, index|
+        %tr
+          %td
+            = index + 1
+          %td
+            = entry.entry
+%a(href='/new' class="btn btn-warning") Enter New Data

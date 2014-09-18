@@ -1,7 +1,74 @@
-GEM
+GIT
+  remote: git://github.com/t6d/opennlp-english.git
+  revision: bd946394a910df2b8b7c11641b04659ba5787abe
+  branch: master
   specs:
+    opennlp-english (0.1.0-java)
+      opennlp
+
+GIT
+  remote: git://github.com/t6d/opennlp.git
+  revision: 7e7fa45e4b864aa93a95f2fb70332833d5b82eca
+  branch: master
+  specs:
+    opennlp (0.1.0-java)
+
+GEM
+  remote: https://rubygems.org/
+  specs:
+    addressable (2.3.6)
+    childprocess (0.5.3)
+      ffi (~> 1.0, >= 1.0.11)
+    choice (0.1.6)
+    data_objects (0.10.14)
+      addressable (~> 2.1)
+    dm-core (1.2.1)
+      addressable (~> 2.3)
+    dm-do-adapter (1.2.0)
+      data_objects (~> 0.10.6)
+      dm-core (~> 1.2.0)
+    dm-migrations (1.2.0)
+      dm-core (~> 1.2.0)
+    dm-sqlite-adapter (1.2.0)
+      dm-do-adapter (~> 1.2.0)
+      do_sqlite3 (~> 0.10.6)
+    do_jdbc (0.10.14-java)
+      data_objects (= 0.10.14)
+    do_sqlite3 (0.10.14)
+      data_objects (= 0.10.14)
+    do_sqlite3 (0.10.14-java)
+      data_objects (= 0.10.14)
+      do_jdbc (= 0.10.14)
+      jdbc-sqlite3 (>= 3.5.8)
+    ffi (1.9.3)
+    ffi (1.9.3-java)
+    haml (4.0.5)
+      tilt
+    jdbc-sqlite3 (3.7.2.1)
+    mizuno (0.6.8)
+      childprocess (>= 0.2.6)
+      choice (>= 0.1.0)
+      ffi (>= 1.0.0)
+      rack (>= 1.0.0)
+    rack (1.5.2)
+    rack-protection (1.5.3)
+      rack
+    sinatra (1.4.5)
+      rack (~> 1.4)
+      rack-protection (~> 1.4)
+      tilt (~> 1.3, >= 1.3.4)
+    tilt (1.4.1)
 
 PLATFORMS
+  java
   ruby
 
 DEPENDENCIES
+  dm-core
+  dm-migrations
+  dm-sqlite-adapter
+  haml
+  mizuno
+  opennlp!
+  opennlp-english!
+  sinatra

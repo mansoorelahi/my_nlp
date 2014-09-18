@@ -1,5 +1,7 @@
-%ol
-  %form{:action => 'create', :method => 'post'}
-    Entry:
-    %input{:type => 'text', :name => 'entry'}
-    %input{:type => 'submit', :value => 'Create'}
+%form{:action => 'create', :method => 'post', :class => "form-inline well"}
+  %fieldset
+    %legend Entry
+    %textarea{:rows=>"3", :name=>"entry", :class=>"text_box", :placeholder => "Type something here..." }
+    %br
+    %br
+    %button.btn{:type => "submit", :class => "btn btn-primary"} Submit

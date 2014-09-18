@@ -34,10 +34,6 @@ class MyApp < Sinatra::Base
     redirect  "/"
   end
 
-  template :layout do
-    "%html\n  =yield\n"
-  end
-
 
   template :data_created do
     "%div\n" +
