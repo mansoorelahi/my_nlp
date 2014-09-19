@@ -30,44 +30,44 @@
       %th Values
     %tbody
       %tr
-        %td
+        %td{:class => "width-40"}
           %b How many sentences are there in your entry
         %td
           %b=data["sentences"].count
       %tr
-        %td
+        %td{:class => "width:40%"}
           %b How many locations are there in your entry
         %td
           %b=data["locations"].count
       %tr
-        %td
+        %td{:class => "width:40%"}
           %b How many unique locations are there in your entry
         %td
           %b=data["locations"].uniq.count
       %tr
-        %td
+        %td{:class => "width:40%"}
           %b How many names are there in your entry
         %td
           %b=data["persons"].count
       %tr
-        %td
+        %td{:class => "width:40%"}
           %b How many unique names are there in your entry
         %td
           %b=data["persons"].uniq.count
       %tr
-        %td
+        %td{:class => "width:40%"}
           %b How many Parts of Speech are there in your entry
         %td
           %b=data["pos"].uniq.count
       %tr
-        %td
+        %td{:class => "width:40%"}
           %b List of Parts of Speech present in your entry
         %td
           %b=data["pos"].uniq
           %b
             %a(href="/pos" class="btn btn-info" ) More Details
       %tr
-        %td
+        %td{:class => "width:40%"}
           %b List of Chunked Data
         %td
           %b=data["chunks"].uniq
