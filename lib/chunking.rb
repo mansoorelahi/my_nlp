@@ -1,16 +1,24 @@
 require_relative 'example_helper'
 
-tokenizer = OpenNLP::Tokenizer.new(OpenNLP::English.tokenization_model)
-tagger    = OpenNLP::POSTagger.new(OpenNLP::English.pos_tagging_model)
-chunker   = OpenNLP::Chunker.new(OpenNLP::English.chunking_model)
+class Chunking
 
-sentence  = "Kiev is a really interesting city."
 
-tokens = tokenizer.process(sentence)
-tags = tagger.process(tokens)
-chunks = chunker.process(tokens, tags)
+  def initialize(data)
+    @data = data
+  end
 
-pp tokens.zip(chunks)
+  def chunker
+    text = @data
+    tokenizer = OpenNLP::Tokenizer.new(OpenNLP::English.tokenization_model)
+    tagger    = OpenNLP::POSTagger.new(OpenNLP::English.pos_tagging_model)
+    chunker   = OpenNLP::Chunker.new(OpenNLP::English.chunking_model)
+    tokens = tokenizer.process(text)
+    tags = tagger.process(tokens)
+    chunks = chunker.process(tokens, tags)
+    chunks =  tokens.zip(chunks)
+
+  end
+end
 
 
 

@@ -1,14 +1,73 @@
+%h3=value
 %table.table
   %thead
     %tr
-      %th #
-      %th location
-      %th name
-      %th money
+      %th Location
+      %th Name
+      %th Money
     %tbody
-      - data.each_with_index do |entry, index|
-        %tr
-          %td
-            = index + 1
-          %td
-            = entry
+      %tr
+        %td
+          - data["locations"].uniq.each_with_index do |entry, index|
+            = entry[0]
+            %br
+        %td
+          - data["persons"].uniq.each_with_index do |entry, index|
+            = entry[0]
+            %br
+        %td
+          - data["money"].uniq.each_with_index do |entry, index|
+            = entry[0]
+            %br
+
+%b.btn.btn-danger More Information:
+%br
+%br
+%table.table
+  %thead
+    %tr
+      %th Entries
+      %th Values
+    %tbody
+      %tr
+        %td
+          %b How many sentences are there in your entry
+        %td
+          %b=data["sentences"].count
+      %tr
+        %td
+          %b How many locations are there in your entry
+        %td
+          %b=data["locations"].count
+      %tr
+        %td
+          %b How many unique locations are there in your entry
+        %td
+          %b=data["locations"].uniq.count
+      %tr
+        %td
+          %b How many names are there in your entry
+        %td
+          %b=data["persons"].count
+      %tr
+        %td
+          %b How many unique names are there in your entry
+        %td
+          %b=data["persons"].uniq.count
+      %tr
+        %td
+          %b How many Parts of Speech are there in your entry
+        %td
+          %b=data["pos"].uniq.count
+      %tr
+        %td
+          %b List of Parts of Speech present in your entry
+        %td
+          %b=data["pos"].uniq
+          %b
+            %a(href="/pos" class="btn btn-info" ) More Details
+      %tr
+        %td
+          %b Chunked Data
+        %td
+          %b=data["chunks"].uniq
